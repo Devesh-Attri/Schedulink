@@ -1,0 +1,2 @@
+id,name,phone_number,email,job_title,department,manager,task_assigned,task_status,created_at,updated_at
+1,Alice,+91-7380561155,alice@gmail.com,Ad Creator,Marketing,Dave,Generate ideas for an ad,Incomplete,,
