@@ -319,6 +319,7 @@ int main() {
                             if (choice == 1) {
                                 string name, description, due_date;
                                 int priority;
+
                                 cout << "Enter task name: ";
                                 cin.ignore();
                                 getline(cin, name);
@@ -326,16 +327,25 @@ int main() {
                                 getline(cin, description);
                                 cout << "Enter due date: ";
                                 cin >> due_date;
-                                cout << "Enter priority: ";
-                                cin >> priority;
+
+                                // Prompt for priority within the specified range
+                                do {
+                                    cout << "Enter priority (1-5): ";
+                                    cin >> priority;
+
+                                    // Check if the priority is within the valid range
+                                    if (priority < 1 || priority > 5) {
+                                    cout << "Invalid priority. Please enter a priority between 1 and 5 (inclusive)." << endl;
+                                    }
+                                } while (priority < 1 || priority > 5);
 
                                 Task newTask(name, description, due_date, priority);
 
                                 // Add the task to the selected employee's task list
                                 taskList.assignTaskToEmployee(employeeID, newTask);
 
-                                cout << "Task assigned to Employee with ID: " << employeeID << endl;
-                            } else if (choice == 2) {
+                               cout << "Task assigned to Employee with ID: " << employeeID << endl;
+                                } else if (choice == 2) {
                                 cout << "Enter the task name to remove: ";
                                 string taskName;
                                 cin.ignore();
